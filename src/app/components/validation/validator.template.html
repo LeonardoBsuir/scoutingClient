@@ -1,0 +1,11 @@
+<div ng-messages="$ctrl.control.$error">
+    <p ng-show="$ctrl.control.$error.required && !$ctrl.control.$pristine">
+     {{'error.control.required' | translate:$ctrl}}
+    </p>
+    <p ng-show="$ctrl.control.$error.minlength">
+     {{'error.control.short' | translate:$ctrl}}
+    </p>
+    <p ng-show="$ctrl.control.$error.maxlength">
+     {{'error.control.long' | translate:$ctrl}}
+    </p>
+</div>

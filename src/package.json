@@ -1,0 +1,51 @@
+{
+  "name": "scouthub",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A ScoutHub application for AngularJS",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-animate": "1.5.8",
+    "angular-aria": "1.5.8",
+    "angular-bootstrap-multiselect": "1.1.2",
+    "angular-cookies": "1.5.8",
+    "angular-growl-notifications": "2.4.0",
+    "angular-material": "1.1.1",
+    "angular-paging": "2.2.2",
+    "angular-resource": "1.5.8",
+    "angular-sanitize": "1.5.8",
+    "angular-translate": "2.12.1",
+    "angular-translate-loader-static-files": "2.12.1",
+    "angular-translate-storage-cookie": "2.12.1",
+    "angular-translate-storage-local": "2.12.1",
+    "angular-ui-bootstrap": "2.1.4",
+    "angular-ui-router": "0.3.1",
+    "angularjs-dropdown-multiselect": "^1.10.2",
+    "bootstrap": "3.3.7",
+    "checklist-model": "^0.10.0",
+    "jquery": "^3.1.1",
+    "ng-dialog": "^0.6.4",
+    "ng-material-floating-button": "0.6.2",
+    "oi.select": "^0.2.21"
+  },
+  "devDependencies": {
+    "css-loader": "0.25.0",
+    "eslint": "^3.9.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-angular": "^1.4.1",
+    "eslint-plugin-promise": "^3.3.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "file-loader": "0.9.0",
+    "http-server": "0.9.0",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
+    "webpack": "1.13.2"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "pack": "webpack --display-modules",
+    "start": "http-server -a localhost -p 8000 -c-1 -o"
+  }
+}

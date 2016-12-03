@@ -1,0 +1,64 @@
+<div class="nav-side-menu custom-scroll">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="brand" ng-bind="'home.brand' | translate"></div>
+    <i class="glyphicon glyphicon-menu-hamburger toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+    <div class="menu-list">
+
+        <ul id="menu-content" class="menu-content collapse out">
+            <li ng-click="$ctrl.newsModalCreate()">
+               <span class="li-item">
+                    <i class="glyphicon glyphicon-plus"></i>
+                   <span translate="" ng-bind="'home.news.button.add' | translate"></span>
+                </span>
+            </li>
+            <li ng-click="$ctrl.tagModalCreate()">
+               <span class="li-item">
+                    <i class="glyphicon glyphicon-plus"></i>
+                   <span ng-bind="'home.tags.button.add' | translate"></span>
+                </span>
+            </li>
+            <li ng-click="$ctrl.authorModalCreate()">
+               <span class="li-item">
+                   <i class="glyphicon glyphicon-plus"></i>
+                   <span ng-bind="'home.authors.button.add' | translate"></span>
+                </span>
+            </li>
+            <li data-toggle="collapse" data-target="#tags" class="collapsed">
+                <span class="li-item">
+                    <i class="glyphicon glyphicon-tags"></i>
+                    <span ng-bind="'home.tags.label.tags' | translate"></span>
+                    <span class="arrow"></span>
+                </span>
+            </li>
+            <div class="inline-block sub-menu-container custom-scroll">
+                <ul class="sub-menu collapse" id="tags">
+                    <tag-list sel="$ctrl.onSelected()" item="$ctrl.tags"></tag-list>
+                </ul>
+            </div>
+
+            <li data-toggle="collapse" data-target="#authors" class="collapsed">
+                <span class="li-item">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <span ng-bind="'home.authors.label.authors' | translate"></span>
+                    <span class="arrow"></span>
+                </span>
+            </li>
+            <div class="inline-block sub-menu-container custom-scroll">
+                <ul class="sub-menu collapse" id="authors">
+                    <author-list sel="$ctrl.onSelected()" item="$ctrl.authors"></author-list>
+                </ul>
+            </div>
+            <li ng-click="$ctrl.resetFilter()">
+                <span class="li-item"><i class="glyphicon glyphicon-erase"></i>
+                    <span ng-bind="'home.news.button.reset' | translate"></span>
+                </span>
+            </li>
+            <div class="footer-offset"></div>
+        </ul>
+    </div>
+</div>
+<div ui-view></div>
