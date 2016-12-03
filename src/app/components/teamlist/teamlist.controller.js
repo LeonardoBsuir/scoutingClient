@@ -1,7 +1,8 @@
-angular.module('scouthubApp').controller('TeamsCtrl', ['TeamService', '$state', '$stateParams',
-    function (TeamService, $state, $stateParams) {
+angular.module('scouthubApp').controller('TeamsCtrl', ['TeamService', 'UserService', '$state', '$stateParams',
+    function (TeamService, UserService, $state, $stateParams) {
         var $ctrl = this;
         var TEAM_NOT_LOAD = 'error.teams.load';
+        var USER_NOT_LOAD = 'error.user.load';
 
         $ctrl.loadTeams = function () {
             TeamService.getAll().then(function (data) {
@@ -11,7 +12,17 @@ angular.module('scouthubApp').controller('TeamsCtrl', ['TeamService', '$state', 
             });
         };
 
-
         $ctrl.loadTeams();
+
+        $ctrl.loadCoach = function () {
+            UserService.getAll().then(function (data) {
+                $ctrl.users = data;
+            }, function () {
+                $ctrl.error = {message: USER_NOT_LOAD};
+            });
+        };
+
+        $ctrl.loadCoach();
+
     }
 ]);

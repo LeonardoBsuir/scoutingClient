@@ -1,7 +1,7 @@
 {
   "home": {
     "brand": "Scouting",
-    "news": {
+    "teams": {
       "button": {
         "add": "Добавить команду",
         "delete": "Удалить",
@@ -16,25 +16,25 @@
         "notFound": "Новости не найдены"
       }
     },
-    "authors": {
+    "players": {
       "button": {
-        "add": "Добавить автора"
+        "add": "Добавить игрока"
       },
       "label": {
-        "authors": "Авторы"
+        "players": "Авторы"
       }
     },
-    "tags": {
+    "scouts": {
       "button": {
         "add": "Добавить скаут"
       },
       "label": {
-        "tags": "Скауты"
+        "scouts": "Скауты"
       }
     }
   },
   "modal": {
-    "news": {
+    "teams": {
       "button": {
         "ok": "Ок",
         "cancel": "Отмена"
@@ -45,14 +45,14 @@
         "create": "Создание новости",
         "edit": "Редактирование новости",
         "title": "Заголовок",
-        "tags": "Скауты",
-        "authors": "Авторы",
+        "scouts": "Скауты",
+        "players": "Авторы",
         "excerpt": "Выдержка",
         "content": "Контент"
       }
     },
 
-    "authors": {
+    "players": {
       "button": {
         "ok": "Ок",
         "cancel": "Отмена"
@@ -60,22 +60,23 @@
       "label": {
         "firstName": "Имя",
         "lastName": "Фамилия",
-        "add": "Добавить автора"
+        "add": "Добавить игрока"
       }
     },
-    "tags": {
+    "scouts": {
       "button": {
         "ok": "Ок",
         "cancel": "Закрыть"
       },
       "label": {
-        "add": "Добавить скаут",
+        "add": "Добавить скаута",
         "name": "Имя"
       }
     }
   },
 
-  "newsDetails": {
+  "teamsDetails": {
+    "coach": "тренер",
     "button": {
       "showComments": "Показать комментарии",
       "hideComments": "Скрыть комментарии",
@@ -85,10 +86,19 @@
       "cancel": "Закрыть"
     },
     "label": {
-      "tags": "Скауты",
-      "authors": "Авторы",
+      "scouts": "Скауты",
+      "players": "Авторы",
       "creationDate": "Дата добавления:",
       "modificationDate": "Дата обновления:"
+    },
+    "skills": {
+      "speed": "скорость",
+      "defence": "защита",
+      "shooting": "удар",
+      "passing": "пас",
+      "dribbling": "дриблинг",
+      "energy": "энергия",
+      "stamina": "выносливость"
     }
   },
 
@@ -121,18 +131,18 @@
       "short": "Поле {{fieldName}} слишком короткое",
       "long": "Поле {{fieldName}} слишком длинное"
     },
-    "tags": {
+    "scouts": {
       "duplicate": "Тег уже существует",
       "load": "Не удалось загрузить скаути"
     },
-    "authors": {
+    "players": {
       "duplicate": "Автор уже существует",
-      "load": "Не удалось загрузить авторов"
+      "load": "Не удалось загрузить игроков"
     },
     "comments": {
       "available": "Комментарии не доступны"
     },
-    "news": {
+    "teams": {
       "available": "Новости не доступны"
     },
     "server": "Ошибка на сервере. Попробуйте позже"

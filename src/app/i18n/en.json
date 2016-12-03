@@ -1,9 +1,9 @@
 {
   "home": {
     "brand": "Scouting",
-    "team": {
+    "teams": {
       "button": {
-        "add": "Add team",
+        "add": "Add teams",
         "delete": "Delete",
         "edit": "Edit",
         "reset": "Reset filter"
@@ -11,8 +11,8 @@
       "label": {
         "creationDate": "Created",
         "modificationDate": "Updated",
-        "create": "Create team",
-        "edit": "Edit team",
+        "create": "Create teams",
+        "edit": "Edit teams",
         "notFound": "News not found"
       }
     },
@@ -34,16 +34,16 @@
     }
   },
   "modal": {
-    "team": {
+    "teams": {
       "button": {
         "ok": "Ok",
         "cancel": "Cancel"
       },
       "label": {
-        "delete": "Delete team",
-        "message": "You are going to delete team with title:",
-        "create": "Create team",
-        "edit": "Edit team",
+        "delete": "Delete teams",
+        "message": "You are going to delete teams with title:",
+        "create": "Create teams",
+        "edit": "Edit teams",
         "title": "Title",
         "scouts": "Scouts",
         "players": "Players",
@@ -75,7 +75,8 @@
     }
   },
 
-  "teamDetails": {
+  "teamsDetails": {
+    "coach": "coach",
     "button": {
       "showComments": "Show Comments",
       "hideComments": "Hide Comments",
@@ -89,6 +90,15 @@
         "players": "Players",
         "creationDate": "CreationDate: ",
         "modificationDate": "ModificationDate: "
+    },
+    "skills": {
+      "speed": "speed",
+      "defence": "defence",
+      "shooting": "shooting",
+      "passing": "passing",
+      "dribbling": "dribbling",
+      "energy": "energy",
+      "stamina": "stamina"
     }
   },
 
@@ -125,14 +135,14 @@
       "duplicate": "Tag already exists",
       "load": "Scouts not load"
     },
-    "teams": {
-      "duplicate": "Author already exists",
-      "load": "Teams not load"
+    "players": {
+      "duplicate": "Player already exists",
+      "load": "Player not load"
     },
     "comments": {
       "available": "Comments not available"
     },
-    "team": {
+    "teams": {
       "available": "News not available"
     },
     "server": "Server error. Try later"

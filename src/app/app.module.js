@@ -29,6 +29,7 @@ angular.module('scouthubApp', ['ui.router', 'ngResource', 'ui.bootstrap', 'pasca
 require('./assets/css/style.css');
 require('./assets/css/languages.css');
 require('./service/team.service.js');
+require('./service/user.service.js');
 require('./components/validation/validator.component.js');
 require('./components/validation/servererror.component.js');
 require('./components/home/home.component.js');

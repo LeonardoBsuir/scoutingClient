@@ -3,9 +3,65 @@
         <hr/>
         <server-error error="$ctrl.error"></server-error>
         <div ng-repeat="team in $ctrl.teams">
-            {{team}}
-            {{team.name}}
-            {{team.skillsBySkillsId.passing}}
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-4">
+                    <img src="{{team.photo}}" width="200px" height="200px">
+
+                    <h3><a ui-sref="#">{{team.name}}</a></h3>
+                    <div ng-repeat="coach in $ctrl.users">
+                        <div ng-show="{{coach.teamByTeamId.teamId === team.teamId && coach.roleByRoleId.roleId === 3}}">
+                            <h3 ng-bind="'teamsDetails.coach' | translate" style="color: #000066"></h3><h4>{{coach.name}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-8">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <h3 ng-bind="'teamsDetails.skills.shooting' | translate"></h3>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-9 progress-bar orange ">
+                            <span style="width:{{team.skillsBySkillsId.shooting}}%;"></span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-xs-1">
+                            <h3>{{team.skillsBySkillsId.shooting}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <h3 ng-bind="'teamsDetails.skills.passing' | translate"></h3>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-9 progress-bar green ">
+                            <span style="width:{{team.skillsBySkillsId.passing}}%"></span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-xs-1">
+                            <h3>{{team.skillsBySkillsId.passing}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <h3 ng-bind="'teamsDetails.skills.defence' | translate"></h3>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-9 progress-bar red ">
+                            <span style="width: {{team.skillsBySkillsId.defence}}%"></span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-xs-1">
+                            <h3>{{team.skillsBySkillsId.defence}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <h3 ng-bind="'teamsDetails.skills.speed' | translate"></h3>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-9 progress-bar blue ">
+                            <span style="width: {{team.skillsBySkillsId.speed}}%"></span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-xs-1">
+                            <h3> {{team.skillsBySkillsId.speed}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
         </div>
     </div>
 </div>
