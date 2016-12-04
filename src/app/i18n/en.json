@@ -1,14 +1,18 @@
 {
   "home": {
+    "total": "Total",
+    "room": "User account",
     "brand": "Scouting",
     "teams": {
       "button": {
+        "view": "View teams",
         "add": "Add teams",
         "delete": "Delete",
         "edit": "Edit",
         "reset": "Reset filter"
       },
       "label": {
+        "teams": "Teams",
         "creationDate": "Created",
         "modificationDate": "Updated",
         "create": "Create teams",
@@ -18,7 +22,8 @@
     },
     "players": {
       "button": {
-        "add": "Add player"
+        "add": "Add player",
+        "view": "View players"
       },
       "label": {
         "players": "Players"
@@ -51,7 +56,6 @@
         "content": "Content"
       }
     },
-
     "players": {
       "button": {
         "ok": "Ok",
@@ -74,7 +78,6 @@
       }
     }
   },
-
   "teamsDetails": {
     "coach": "coach",
     "button": {
@@ -86,10 +89,10 @@
       "cancel": "Cancel"
     },
     "label": {
-        "scouts": "Scouts",
-        "players": "Players",
-        "creationDate": "CreationDate: ",
-        "modificationDate": "ModificationDate: "
+      "scouts": "Scouts",
+      "players": "Players",
+      "creationDate": "CreationDate: ",
+      "modificationDate": "ModificationDate: "
     },
     "skills": {
       "speed": "speed",
@@ -101,7 +104,6 @@
       "stamina": "stamina"
     }
   },
-
   "comments": {
     "button": {
       "add": "Add comment",
@@ -112,18 +114,17 @@
     "label": {
       "add": "Add comment",
       "edit": "Edit comment",
+      "view": "View comment",
       "username": "Username",
       "text": "Text"
     }
   },
-
   "date": {
     "label": {
       "today": "today at",
       "yesterday": "yesterday at"
     }
   },
-
   "error": {
     "control": {
       "empty": "{{fieldName}} can't be empty",
@@ -131,19 +132,20 @@
       "short": "{{fieldName}} is too short",
       "long": "{{fieldName}} is too long"
     },
-    "scouts": {
+    "user": {
       "duplicate": "Tag already exists",
-      "load": "Scouts not load"
+      "load": "User not load"
     },
     "players": {
       "duplicate": "Player already exists",
-      "load": "Player not load"
+      "load": "Players not load"
     },
     "comments": {
       "available": "Comments not available"
     },
     "teams": {
-      "available": "News not available"
+      "available": "News not available",
+      "load": "Teams not load"
     },
     "server": "Server error. Try later"
   }

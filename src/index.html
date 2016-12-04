@@ -7,10 +7,10 @@
 </head>
 <body ng-cloak>
 <header>
-    <nav class="navbar navbar-inverse navbar-static-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a ui-sref="news.list"
+                <a ui-sref="scouting.teams"
                    ui-sref-opts="{reload:true, inherit: false}" class="navbar-brand logo">
                     <img src="app/assets/img/logo.png" alt="Scouting" width="200" height="50">
                 </a>
@@ -36,7 +36,7 @@
         <div ui-view></div>
     </div>
 </main>
-<footer class="custom-footer navbar-static-bottom">
+<footer class="custom-footer navbar-fixed-bottom">
     <div class="container text-center">
         <p class="text-muted">ScoutHub &copy; 2016</p>
     </div>

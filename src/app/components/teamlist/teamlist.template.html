@@ -1,16 +1,19 @@
 <div class="col-sm-offset-3 col-sm-9 col-md-9 col-md-offset-3 main">
     <div>
+        <br>
         <hr/>
         <server-error error="$ctrl.error"></server-error>
         <div ng-repeat="team in $ctrl.teams">
-            <div class="row">
+            <div class="row" hg-sreg="">
                 <div class="col-lg-4 col-md-4 col-xs-4">
                     <img src="{{team.photo}}" width="200px" height="200px">
 
                     <h3><a ui-sref="#">{{team.name}}</a></h3>
+
                     <div ng-repeat="coach in $ctrl.users">
                         <div ng-show="{{coach.teamByTeamId.teamId === team.teamId && coach.roleByRoleId.roleId === 3}}">
-                            <h3 ng-bind="'teamsDetails.coach' | translate" style="color: #000066"></h3><h4>{{coach.name}}</h4>
+                            <h3 ng-bind="'teamsDetails.coach' | translate" style="color: #000066"></h3>
+                            <h4>{{coach.name}}</h4>
                         </div>
                     </div>
                 </div>

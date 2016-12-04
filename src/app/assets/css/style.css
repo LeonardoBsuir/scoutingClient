@@ -240,10 +240,10 @@ a {
 
 .progress-bar {
     background-color: #1a1a1a;
-    height: 25px;
+    height: 20px;
     padding: 5px;
-    width: 300px;
-    margin: 70px 0 20px 0;
+    width: 250px;
+    margin: 20px 0 0 20px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;

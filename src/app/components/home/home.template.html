@@ -3,57 +3,47 @@
     <br>
     <br>
     <br>
+
     <div class="brand" ng-bind="'home.brand' | translate"></div>
     <i class="glyphicon glyphicon-menu-hamburger toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
     <div class="menu-list">
 
         <ul id="menu-content" class="menu-content collapse out">
-            <li ng-click="$ctrl.teamsModalCreate()">
-               <span class="li-item">
-                    <i class="glyphicon glyphicon-plus"></i>
-                   <span translate="" ng-bind="'home.teams.button.add' | translate"></span>
-                </span>
-            </li>
-            <li ng-click="$ctrl.tagModalCreate()">
-               <span class="li-item">
-                    <i class="glyphicon glyphicon-plus"></i>
-                   <span ng-bind="'home.scouts.button.add' | translate"></span>
-                </span>
-            </li>
-            <li ng-click="$ctrl.authorModalCreate()">
-               <span class="li-item">
-                   <i class="glyphicon glyphicon-plus"></i>
-                   <span ng-bind="'home.players.button.add' | translate"></span>
-                </span>
-            </li>
-            <li data-toggle="collapse" data-target="#scouts" class="collapsed">
+            <li data-toggle="collapse" data-target="#teams" class="collapsed">
                 <span class="li-item">
-                    <i class="glyphicon glyphicon-scouts"></i>
-                    <span ng-bind="'home.scouts.label.scouts' | translate"></span>
-                    <span class="arrow"></span>
+                    <i class="glyphicon glyphicon-plus"></i>
+                    <span ng-bind="'home.teams.label.teams' | translate"></span>
                 </span>
             </li>
             <div class="inline-block sub-menu-container custom-scroll">
-                <ul class="sub-menu collapse" id="scouts">
-                    <tag-list sel="$ctrl.onSelected()" item="$ctrl.scouts"></tag-list>
+                <ul class="sub-menu collapse" id="teams">
+                    <li ui-sref=".teams" ng-bind="'home.teams.button.view' | translate"></li>
+                    <li ng-bind="'home.teams.button.add' | translate"></li>
                 </ul>
             </div>
-
             <li data-toggle="collapse" data-target="#players" class="collapsed">
                 <span class="li-item">
-                    <i class="glyphicon glyphicon-user"></i>
+                    <i class="glyphicon glyphicon-plus"></i>
                     <span ng-bind="'home.players.label.players' | translate"></span>
-                    <span class="arrow"></span>
                 </span>
             </li>
             <div class="inline-block sub-menu-container custom-scroll">
                 <ul class="sub-menu collapse" id="players">
-                    <author-list sel="$ctrl.onSelected()" item="$ctrl.players"></author-list>
+                    <li ui-sref=".players" ng-bind="'home.players.button.view' | translate"></li>
+                    <li ng-bind="'home.players.button.add' | translate"></li>
                 </ul>
             </div>
+
+            <li ng-click="$ctrl.newsModalCreate()">
+               <span class="li-item">
+                    <i class="glyphicon glyphicon-user"></i>
+                   <span translate="" ng-bind="'home.room' | translate"></span>
+                </span>
+            </li>
+
             <li ng-click="$ctrl.resetFilter()">
-                <span class="li-item"><i class="glyphicon glyphicon-erase"></i>
+                <span class="li-item"><i class="glyphicon glyphicon-list"></i>
                     <span ng-bind="'home.teams.button.reset' | translate"></span>
                 </span>
             </li>

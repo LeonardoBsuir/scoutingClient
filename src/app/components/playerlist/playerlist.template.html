@@ -1,0 +1,44 @@
+<div class="col-sm-offset-3 col-sm-9 col-md-9 col-md-offset-3 main">
+    <div>
+        <br>
+        <hr/>
+        <server-error error="$ctrl.error"></server-error>
+
+        <div ng-repeat="player in $ctrl.players" ng-click="$ctrl.onSelected(player)">
+            <div class="row">
+                <hr/>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img src="{{player.photo}}" width="100px" height="125px">
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h3>{{player.firstName}} {{player.lastName}}</h3>
+                    <h4>{{player.teamByTeamId.name}}</h4>
+                    <h4>{{player.position}}</h4>
+                </div>
+                <div class="col-lg-5 col-md-5 col-xs-5">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <h3 ng-bind="'home.total' | translate"></h3>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-xs-1">
+                            <h3>{{ player.skillsBySkillsId | getTotal }}</h3>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-xs-9 progress-bar blue " style="width: 200px">
+                            <span style="width: {{ player.skillsBySkillsId | getTotal }}%"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img src="{{player.teamByTeamId.photo}}" width="75px" height="75px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <br>
+    <br>
+</div>
+
+
+
+
