@@ -6,7 +6,7 @@
     "teams": {
       "button": {
         "view": "View teams",
-        "add": "Add teams",
+        "add": "Add team",
         "delete": "Delete",
         "edit": "Edit",
         "reset": "Reset filter"
@@ -21,6 +21,14 @@
       }
     },
     "players": {
+      "club": "Club",
+      "price": "Price",
+      "salary": "Salary",
+      "weight": "Weight",
+      "height": "Height",
+      "foot": "Foot",
+      "age": "Age",
+      "position": "Position",
       "button": {
         "add": "Add player",
         "view": "View players"

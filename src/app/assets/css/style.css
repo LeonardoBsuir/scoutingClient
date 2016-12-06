@@ -288,6 +288,18 @@ a {
     background-color: #a5df41;
 }
 
+.deepblue span {
+    background-color: blue;
+}
+
+.brown span {
+    background-color: saddlebrown;
+}
+
+.magenta span {
+    background-color: darkmagenta;
+}
+
 /*---------------------------*/
 
 

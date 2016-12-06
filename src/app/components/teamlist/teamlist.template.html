@@ -4,11 +4,11 @@
         <hr/>
         <server-error error="$ctrl.error"></server-error>
         <div ng-repeat="team in $ctrl.teams">
-            <div class="row" hg-sreg="">
+            <div class="row" ng-click="$ctrl.onSelected(team)">
                 <div class="col-lg-4 col-md-4 col-xs-4">
                     <img src="{{team.photo}}" width="200px" height="200px">
 
-                    <h3><a ui-sref="#">{{team.name}}</a></h3>
+                    <h3>{{team.name}}</h3>
 
                     <div ng-repeat="coach in $ctrl.users">
                         <div ng-show="{{coach.teamByTeamId.teamId === team.teamId && coach.roleByRoleId.roleId === 3}}">

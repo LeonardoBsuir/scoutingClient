@@ -2,9 +2,14 @@ angular.module('scouthubApp').controller('PlayersCtrl', ['PlayerService', '$stat
     function (PlayerService, $state, $stateParams) {
         var $ctrl = this;
         var PLAYERS_NOT_LOAD = 'error.players.load';
+        $ctrl.team = $stateParams.team;
+        var teamId;
+        if ($ctrl.team != null) {
+            teamId = $ctrl.team.teamId;
+        }
 
         $ctrl.loadPlayers = function () {
-            PlayerService.getAll().then(function (data) {
+            PlayerService.getByTeamId(teamId).then(function (data) {
                 $ctrl.players = data;
             }, function () {
                 $ctrl.error = {message: PLAYERS_NOT_LOAD};

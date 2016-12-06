@@ -4,13 +4,188 @@
         <br>
         <hr/>
         <server-error error="$ctrl.error"></server-error>
+        <div class="row">
+            <hr/>
+            <div class="col-lg-3 col-md-3 col-xs-3">
+                <img src="{{$ctrl.player.photo}}" width="200px" height="250px">
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <h2>{{$ctrl.player.firstName}} {{$ctrl.player.lastName}}</h2>
+                <br>
+                <span ng-bind="'home.players.club' | translate"></span>
+                <h4>{{$ctrl.player.teamByTeamId.name}}</h4>
+                <span ng-bind="'home.players.position' | translate"></span>
+                <h4>{{$ctrl.player.position}}</h4>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-6">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-xs-2">
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-4">
+                        <h3 ng-bind="'home.players.age' | translate"></h3>
 
-        <h1>{{$ctrl.player}}</h1>
-        <hr/>
-        <br>
-        <br>
+                        <h3 ng-bind="'home.players.price' | translate"></h3>
+
+                        <h3 ng-bind="'home.players.salary' | translate"></h3>
+
+                        <h3 ng-bind="'home.players.weight' | translate"></h3>
+
+                        <h3 ng-bind="'home.players.height' | translate"></h3>
+
+                        <h3 ng-bind="'home.players.foot' | translate"></h3>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <h3>{{$ctrl.player.birthdate | getAge }}</h3>
+
+                        <h3>{{$ctrl.player.cost}} $</h3>
+
+                        <h3>{{$ctrl.player.salary*1000}} $</h3>
+
+                        <h3>{{$ctrl.player.weight}} kg</h3>
+
+                        <h3>{{$ctrl.player.height}} cm</h3>
+
+                        <h3>{{$ctrl.player.foot}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-xs-1">
+                <img src="{{$ctrl.player.teamByTeamId.photo}}"
+                     width="75px" height="75px">
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h3 ng-bind="'teamsDetails.skills.shooting' | translate"></h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 progress-bar orange ">
+                    <span style="width:{{$ctrl.player.skillsBySkillsId.shooting}}%;"></span>
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <h3>{{$ctrl.player.skillsBySkillsId.shooting}}</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img style="margin-top: 15px;"
+                         src="{{$ctrl.user.teamByTeamId.skillsBySkillsId.shooting | getArrow:$ctrl.player.skillsBySkillsId.shooting }}"
+                         width="30px" height="30px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h3 ng-bind="'teamsDetails.skills.passing' | translate"></h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 progress-bar green ">
+                    <span style="width:{{$ctrl.player.skillsBySkillsId.passing}}%"></span>
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <h3>{{$ctrl.player.skillsBySkillsId.passing}}</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img style="margin-top: 15px;"
+                         src="{{$ctrl.user.teamByTeamId.skillsBySkillsId.passing | getArrow:$ctrl.player.skillsBySkillsId.passing }}"
+                         width="30px" height="30px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h3 ng-bind="'teamsDetails.skills.defence' | translate"></h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 progress-bar red ">
+                    <span style="width: {{$ctrl.player.skillsBySkillsId.defence}}%"></span>
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <h3>{{$ctrl.player.skillsBySkillsId.defence}}</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img style="margin-top: 15px;"
+                         src="{{$ctrl.user.teamByTeamId.skillsBySkillsId.defence | getArrow:$ctrl.player.skillsBySkillsId.defence }}"
+                         width="30px" height="30px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h3 ng-bind="'teamsDetails.skills.speed' | translate"></h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 progress-bar blue ">
+                    <span style="width: {{$ctrl.player.skillsBySkillsId.speed}}%"></span>
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <h3> {{$ctrl.player.skillsBySkillsId.speed}}</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img style="margin-top: 15px;"
+                         src="{{$ctrl.user.teamByTeamId.skillsBySkillsId.speed | getArrow:$ctrl.player.skillsBySkillsId.speed }}"
+                         width="30px" height="30px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h3 ng-bind="'teamsDetails.skills.dribbling' | translate"></h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 progress-bar magenta ">
+                    <span style="width: {{$ctrl.player.skillsBySkillsId.dribbling}}%"></span>
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <h3> {{$ctrl.player.skillsBySkillsId.dribbling}}</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img style="margin-top: 15px;"
+                         src="{{$ctrl.user.teamByTeamId.skillsBySkillsId.dribbling | getArrow:$ctrl.player.skillsBySkillsId.dribbling }}"
+                         width="30px" height="30px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h3 ng-bind="'teamsDetails.skills.energy' | translate"></h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 progress-bar brown ">
+                    <span style="width: {{$ctrl.player.skillsBySkillsId.energy}}%"></span>
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <h3> {{$ctrl.player.skillsBySkillsId.energy}}</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img style="margin-top: 15px;"
+                         src="{{$ctrl.user.teamByTeamId.skillsBySkillsId.energy | getArrow:$ctrl.player.skillsBySkillsId.energy }}"
+                         width="30px" height="30px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h3 ng-bind="'teamsDetails.skills.stamina' | translate"></h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 progress-bar deepblue ">
+                    <span style="width: {{$ctrl.player.skillsBySkillsId.stamina}}%"></span>
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <h3> {{$ctrl.player.skillsBySkillsId.stamina}}</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <img style="margin-top: 15px;"
+                         src="{{$ctrl.user.teamByTeamId.skillsBySkillsId.stamina | getArrow:$ctrl.player.skillsBySkillsId.stamina }}"
+                         width="30px" height="30px">
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <h2 ng-bind="'home.total' | translate"></h2>
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <h3 style="color: darkblue;">{{ $ctrl.player.skillsBySkillsId | getTotal }}</h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6 progress-bar blue " style="width: 200px">
+                    <span style="width: {{ $ctrl.player.skillsBySkillsId | getTotal }}%"></span>
+                </div>
+            </div>
+        </div>
     </div>
+    <hr/>
+    <br>
+    <br>
 </div>
+
 
 
 

@@ -24,5 +24,9 @@ angular.module('scouthubApp').controller('TeamsCtrl', ['TeamService', 'UserServi
 
         $ctrl.loadCoach();
 
+        $ctrl.onSelected = function (team) {
+            $state.go('scouting.players', {team: team});
+        };
+
     }
 ]);
