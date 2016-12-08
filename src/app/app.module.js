@@ -100,6 +100,12 @@ require('./components/account/account.component.js');
 require('./components/account/account.controller.js');
 require('./commons/translate.controller.js');
 
+require('./components/modals/teammodal/teammodal.component.js');
+require('./components/modals/playermodal/playermodal.component.js');
+
+require('./service/teammodal.service.js');
+require('./service/playermodal.service.js');
+require('./components/modals/directive.js');
 
 require('./components/auth/session.service.js');
 require('./components/auth/auth.service.js');

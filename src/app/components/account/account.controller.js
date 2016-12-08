@@ -4,16 +4,24 @@ angular.module('scouthubApp').controller('AccountCtrl', ['PlayerService', '$stat
         var PLAYERS_NOT_LOAD = 'error.players.load';
         var USER_NOT_LOAD = 'error.user.load';
         $ctrl.player = $stateParams.player;
+        $ctrl.user = Session.user;
 
         $ctrl.loadUser = function () {
-            UserService.get(Session.user.userId).then(function (data) {
+            UserService.get($ctrl.user.userId).then(function (data) {
                 $ctrl.user = data;
+                Session.destroy();
+                Session.create($ctrl.user);
             }, function () {
                 $ctrl.error = {message: USER_NOT_LOAD};
             });
         };
 
         $ctrl.loadUser();
+
+        $ctrl.onSelected = function (player) {
+            $state.go('scouting.player', {player: player});
+        };
+
 
     }
 

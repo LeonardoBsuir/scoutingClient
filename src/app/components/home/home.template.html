@@ -19,7 +19,7 @@
             <div class="inline-block sub-menu-container custom-scroll">
                 <ul class="sub-menu collapse" id="teams">
                     <li ui-sref=".teams" ng-bind="'home.teams.button.view' | translate"></li>
-                    <li ng-bind="'home.teams.button.add' | translate"></li>
+                    <li ng-click="$ctrl.teamModalCreate()" ng-bind="'home.teams.button.add' | translate"></li>
                 </ul>
             </div>
             <li data-toggle="collapse" data-target="#players" class="collapsed">
@@ -31,7 +31,7 @@
             <div class="inline-block sub-menu-container custom-scroll">
                 <ul class="sub-menu collapse" id="players">
                     <li ui-sref=".players" ng-bind="'home.players.button.view' | translate"></li>
-                    <li ng-bind="'home.players.button.add' | translate"></li>
+                    <li ng-click="$ctrl.playerModalCreate()" ng-bind="'home.players.button.add' | translate"></li>
                 </ul>
             </div>
 

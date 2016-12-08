@@ -6,9 +6,22 @@ angular.module('scouthubApp').controller('PlayerCtrl', ['PlayerService', '$state
 
         $ctrl.user = Session.user;
 
-    }
+        $ctrl.deletePlayer = function (player) {
+            PlayerService.delete(player.playerId).then(function () {
+                $state.go('scouting.players');
+            });
+        };
 
-]).filter("getAge", function () {
+
+        $ctrl.ifDel = function () {
+            if ($ctrl.user.roleByRoleId.type === 'admin') {
+                return true;
+            }
+            else return false;
+
+        };
+
+    }]).filter("getAge", function () {
     return function (birthdate) {
         var minutes = 1000 * 60;
         var hours = minutes * 60;

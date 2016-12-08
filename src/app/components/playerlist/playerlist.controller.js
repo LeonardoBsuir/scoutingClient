@@ -22,7 +22,6 @@ angular.module('scouthubApp').controller('PlayersCtrl', ['PlayerService', '$stat
             $state.go('scouting.player', {player: player});
         };
 
-
     }
 
 ]).filter("getTotal", function () {

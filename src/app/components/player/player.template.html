@@ -178,6 +178,19 @@
                 <div class="col-lg-6 col-md-6 col-xs-6 progress-bar blue " style="width: 200px">
                     <span style="width: {{ $ctrl.player.skillsBySkillsId | getTotal }}%"></span>
                 </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-11 col-md-11 col-xs-11">
+                </div>
+                <div class="col-lg-1 col-md-1 col-xs-1">
+                    <button class=" btn btn-danger" ng-click="$ctrl.deletePlayer($ctrl.player)"
+                            ng-if="$ctrl.ifDel()">
+                        <span ng-bind="'home.delete' | translate"></span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

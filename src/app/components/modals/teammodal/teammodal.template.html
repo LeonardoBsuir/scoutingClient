@@ -1,0 +1,58 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-name" id="modal-name">{{$ctrl.header}}</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <server-error error="$ctrl.error"></server-error>
+        <form class="form-horizontal" name="teamForm" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' : teamForm.name.$invalid && !teamForm.name.$pristine }">
+                <label class="col-sm-2 control-label" for="name" ng-bind="'modal.teams.label.name' | translate">
+                </label>
+
+                <div class="col-sm-10">
+                    <input type="text" name="name" class="form-control" id="name" ng-model="$ctrl.currentTeam.name"
+                           ng-maxlength="200" required>
+                    <validator control="teamForm.name" field-name="{{'modal.teams.label.name' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : teamForm.country.$invalid && !teamForm.country.$pristine }">
+                <label class="col-sm-2 control-label" for="country"
+                       ng-bind="'modal.teams.label.country' | translate"></label>
+
+                <div class="col-sm-10">
+                    <textarea class="form-control" name="country" id="country" ng-model="$ctrl.currentTeam.country"
+                              rows="3" ng-maxlength="2000" required></textarea>
+                    <validator control="teamForm.country" field-name="{{'modal.teams.label.country' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+            <div class="form-group"
+                 ng-class="{ 'has-error' : teamForm.photo.$invalid && !teamForm.photo.$pristine }">
+
+                <label class="col-sm-2 control-label" for="photo"></label>
+
+                <div class="col-sm-10">
+                    <input type="file" class="form-control" name="photo" id="photo"
+                           ng-model="$ctrl.currentTeam.photo" data-bind-file>
+                    <validator control="teamForm.photo" field-name="{{'modal.teams.label.photo' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.finish()"
+                ng-disabled="teamForm.$invalid || teamForm.$pristine"
+                ng-bind="'modal.teams.button.ok' | translate">
+        </button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()"
+                ng-bind="'modal.teams.button.cancel' | translate">
+        </button>
+    </div>
+</div>

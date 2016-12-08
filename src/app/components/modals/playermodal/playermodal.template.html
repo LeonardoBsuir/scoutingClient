@@ -1,0 +1,291 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-name" id="modal-name">{{$ctrl.header}}</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <server-error error="$ctrl.error"></server-error>
+        <form class="form-horizontal" name="playerForm" novalidate>
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.firstName.$invalid && !playerForm.firstName.$pristine }">
+                <label class="col-sm-2 control-label" for="firstName"
+                       ng-bind="'modal.players.label.firstName' | translate">
+                </label>
+
+                <div class="col-sm-10">
+                    <input type="text" name="firstName" class="form-control" id="firstName"
+                           ng-model="$ctrl.currentPlayer.firstName"
+                           ng-maxlength="200" required>
+                    <validator control="playerForm.firstName"
+                               field-name="{{'modal.players.label.firstName' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.lastName.$invalid && !playerForm.lastName.$pristine }">
+                <label class="col-sm-2 control-label" for="lastName"
+                       ng-bind="'modal.players.label.lastName' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="lastName" id="lastName"
+                           ng-model="$ctrl.currentPlayer.lastName" required/>
+                    <validator control="playerForm.lastName" field-name="{{'modal.players.label.lastName' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.position.$invalid && !playerForm.position.$pristine }">
+
+                <label class="col-sm-2 control-label" for="position"
+                       ng-bind="'modal.players.label.position' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="position" id="position" ng-maxlength="3"
+                           ng-model="$ctrl.currentPlayer.position" required>
+                    <validator control="playerForm.position"
+                               field-name="{{'modal.players.label.position' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.photo.$invalid && !playerForm.photo.$pristine }">
+
+                <label class="col-sm-2 control-label" for="photo"
+                       ng-bind="'modal.players.label.photo' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="file" class="form-control" name="photo" id="photo"
+                           ng-model="$ctrl.currentPlayer.photo" data-bind-file required>
+                    <validator control="playerForm.photo" field-name="{{'modal.players.label.photo' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.birthdate.$invalid && !playerForm.birthdate.$pristine }">
+
+                <label class="col-sm-2 control-label" for="birthdate"
+                       ng-bind="'modal.players.label.birthdate' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" name="birthdate" id="birthdate"
+                           ng-model="$ctrl.currentPlayer.birthdate" required>
+                    <validator control="playerForm.birthdate"
+                               field-name="{{'modal.players.label.birthdate' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.weight.$invalid && !playerForm.weight.$pristine }">
+
+                <label class="col-sm-2 control-label" for="weight"
+                       ng-bind="'modal.players.label.weight' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="weight" id="weight"
+                           ng-model="$ctrl.currentPlayer.weight" required>
+                    <validator control="playerForm.weight"
+                               field-name="{{'modal.players.label.weight' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.height.$invalid && !playerForm.height.$pristine }">
+
+                <label class="col-sm-2 control-label" for="height"
+                       ng-bind="'modal.players.label.height' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="height" id="height"
+                           ng-model="$ctrl.currentPlayer.height" required>
+                    <validator control="playerForm.height"
+                               field-name="{{'modal.players.label.height' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.salary.$invalid && !playerForm.salary.$pristine }">
+
+                <label class="col-sm-2 control-label" for="salary"
+                       ng-bind="'modal.players.label.salary' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="salary" id="salary"
+                           ng-model="$ctrl.currentPlayer.salary" required>
+                    <validator control="playerForm.salary"
+                               field-name="{{'modal.players.label.salary' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.cost.$invalid && !playerForm.cost.$pristine }">
+
+                <label class="col-sm-2 control-label" for="cost"
+                       ng-bind="'modal.players.label.cost' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="cost" id="cost"
+                           ng-model="$ctrl.currentPlayer.cost" required>
+                    <validator control="playerForm.cost"
+                               field-name="{{'modal.players.label.cost' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.foot.$invalid && !playerForm.foot.$pristine }">
+
+                <label class="col-sm-2 control-label" for="foot"
+                       ng-bind="'modal.players.label.foot' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="foot" id="foot"
+                           ng-model="$ctrl.currentPlayer.foot" required>
+                    <validator control="playerForm.foot"
+                               field-name="{{'modal.players.label.foot' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.shooting.$invalid && !playerForm.shooting.$pristine }">
+
+                <label class="col-sm-2 control-label" for="shooting"
+                       ng-bind="'modal.players.label.shooting' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="100" class="form-control" name="shooting" id="shooting"
+                           ng-model="$ctrl.currentPlayer.skillsBySkillsId.shooting" required>
+                    <validator control="playerForm.shooting"
+                               field-name="{{'modal.players.label.shooting' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.passing.$invalid && !playerForm.passing.$pristine }">
+
+                <label class="col-sm-2 control-label" for="passing"
+                       ng-bind="'modal.players.label.passing' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="100" class="form-control" name="passing" id="passing"
+                           ng-model="$ctrl.currentPlayer.skillsBySkillsId.passing" required>
+                    <validator control="playerForm.passing"
+                               field-name="{{'modal.players.label.passing' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.dribbling.$invalid && !playerForm.dribbling.$pristine }">
+
+                <label class="col-sm-2 control-label" for="dribbling"
+                       ng-bind="'modal.players.label.dribbling' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="100" class="form-control" name="dribbling" id="dribbling"
+                           ng-model="$ctrl.currentPlayer.skillsBySkillsId.dribbling" required>
+                    <validator control="playerForm.dribbling"
+                               field-name="{{'modal.players.label.dribbling' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.defence.$invalid && !playerForm.defence.$pristine }">
+
+                <label class="col-sm-2 control-label" for="defence"
+                       ng-bind="'modal.players.label.defence' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="100" class="form-control" name="defence" id="defence"
+                           ng-model="$ctrl.currentPlayer.skillsBySkillsId.defence" required>
+                    <validator control="playerForm.defence"
+                               field-name="{{'modal.players.label.defence' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.speed.$invalid && !playerForm.speed.$pristine }">
+
+                <label class="col-sm-2 control-label" for="speed"
+                       ng-bind="'modal.players.label.speed' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="100" class="form-control" name="speed" id="speed"
+                           ng-model="$ctrl.currentPlayer.skillsBySkillsId.speed" required>
+                    <validator control="playerForm.speed"
+                               field-name="{{'modal.players.label.speed' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.energy.$invalid && !playerForm.energy.$pristine }">
+
+                <label class="col-sm-2 control-label" for="energy"
+                       ng-bind="'modal.players.label.energy' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="100" class="form-control" name="energy" id="energy"
+                           ng-model="$ctrl.currentPlayer.skillsBySkillsId.energy" required>
+                    <validator control="playerForm.energy"
+                               field-name="{{'modal.players.label.energy' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.stamina.$invalid && !playerForm.stamina.$pristine }">
+
+                <label class="col-sm-2 control-label" for="stamina"
+                       ng-bind="'modal.players.label.stamina' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="number" min="0" max="100" class="form-control" name="stamina" id="stamina"
+                           ng-model="$ctrl.currentPlayer.skillsBySkillsId.stamina" required>
+                    <validator control="playerForm.stamina"
+                               field-name="{{'modal.players.label.stamina' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : playerForm.team.$invalid && !playerForm.team.$pristine }">
+
+                <label class="col-sm-2 control-label" for="team"
+                       ng-bind="'modal.players.label.team' | translate"></label>
+
+                <div class="col-sm-10">
+                    <select class="form-control" name="team" id="team"
+                            ng-model="$ctrl.currentPlayer.teamByTeamId" ng-options="team.name for team in $ctrl.teams"
+                            required>
+                    </select>
+                    <validator control=" playerForm.team"
+                               field-name="{{'modal.players.label.team' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.finish()"
+                ng-disabled="playerForm.$invalid || playerForm.$pristine"
+                ng-bind="'modal.players.button.ok' | translate">
+        </button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()"
+                ng-bind="'modal.players.button.cancel' | translate">
+        </button>
+    </div>
+</div>

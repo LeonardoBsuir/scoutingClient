@@ -1,5 +1,8 @@
 {
   "home": {
+    "delete": "Delete",
+    "email": "e-mail",
+    "login": "login",
     "total": "Total",
     "room": "User account",
     "brand": "Scouting",
@@ -53,15 +56,13 @@
         "cancel": "Cancel"
       },
       "label": {
-        "delete": "Delete teams",
+        "delete": "Delete team",
         "message": "You are going to delete teams with title:",
-        "create": "Create teams",
-        "edit": "Edit teams",
-        "title": "Title",
-        "scouts": "Scouts",
-        "players": "Players",
-        "excerpt": "Excerpt",
-        "content": "Content"
+        "create": "Create team",
+        "edit": "Edit team",
+        "name": "Name",
+        "country": "Country",
+        "photo": "Photo"
       }
     },
     "players": {
@@ -70,9 +71,29 @@
         "cancel": "Cancel"
       },
       "label": {
+        "team": "Club",
+        "cost": "cost",
+        "birthdate": "birth date",
         "firstName": "FirstName",
         "lastName": "LastName",
-        "add": "Add player"
+        "club": "Club",
+        "price": "Price",
+        "salary": "Salary",
+        "weight": "Weight",
+        "height": "Height",
+        "foot": "Foot",
+        "age": "Age",
+        "position": "Position",
+        "photo": "photo",
+        "create": "Create player",
+        "edit": "Edit player",
+        "speed": "speed",
+        "defence": "defence",
+        "shooting": "shooting",
+        "passing": "passing",
+        "dribbling": "dribbling",
+        "energy": "energy",
+        "stamina": "stamina"
       }
     },
     "scouts": {
