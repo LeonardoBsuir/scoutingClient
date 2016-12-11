@@ -4,7 +4,42 @@
         <hr/>
         <server-error error="$ctrl.error"></server-error>
 
-        <div ng-repeat="player in $ctrl.players" ng-click="$ctrl.onSelected(player)">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-xs-2">
+                <select class="form-control" name="type" id="type"
+                        ng-model="$ctrl.option"
+                        required>
+                    <option ng-selected="true">firstName</option>
+                    <option>lastName</option>
+                    <option>birthdate</option>
+                    <option>salary</option>
+                    <option>cost</option>
+                </select>
+            </div>
+            <div class="col-lg-3 col-md-3 col-xs-3">
+                <button class="btn btn-primary" ng-click="$ctrl.orderByMe($ctrl.option)"
+                        ng-bind="'home.sort' | translate"></button>
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2" ng-if="$ctrl.isNumber()">
+                <label for="min">min</label><input class="form-control" type="number" id="min" name="min"/>
+            </div>
+
+            <div class="col-lg-1 col-md-1 col-xs-1" ng-if="$ctrl.isNumber()">
+
+            </div>
+            <div class="col-lg-2 col-md-2 col-xs-2" ng-if="$ctrl.isNumber()">
+                <label for="max">max</label><input class="form-control" type="number" id="max" name="max"/>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-4" ng-if="$ctrl.isString()">
+                <label for="like">like</label><input class="form-control" type="text" id="like" name="like"/>
+            </div>
+
+        </div>
+
+
+        <div ng-repeat="player in $ctrl.players | orderBy:$ctrl.myOrderBy | filter: $ctrl.myFilter"
+             ng-click="$ctrl.onSelected(player)">
             <div class="row">
                 <hr/>
                 <div class="col-lg-2 col-md-2 col-xs-2">
@@ -38,6 +73,8 @@
     <hr/>
     <br>
     <br>
+    <br>
+
 </div>
 
 

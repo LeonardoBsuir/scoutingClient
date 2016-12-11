@@ -1,0 +1,134 @@
+<div class="col-sm-offset-3 col-sm-9 col-md-9 col-md-offset-3 main">
+    <div>
+        <br>
+        <br>
+
+        <h1 ng-bind="'home.register' | translate"></h1>
+        <hr/>
+        <server-error error="$ctrl.error"></server-error>
+        <form class="form-horizontal" name="userForm" novalidate>
+            <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                <label class="col-sm-2 control-label" for="name" ng-bind="'home.users.label.name' | translate">
+                </label>
+
+                <div class="col-sm-10">
+                    <input type="text" name="name" class="form-control" id="name" ng-model="$ctrl.currentUser.name"
+                           ng-maxlength="200" required>
+                    <validator control="userForm.name" field-name="{{'home.users.label.name' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{ 'has-error' : userForm.login.$invalid && !userForm.login.$pristine }">
+                <label class="col-sm-2 control-label" for="login" ng-bind="'home.users.label.login' | translate">
+                </label>
+
+                <div class="col-sm-10">
+                    <input type="text" name="login" class="form-control" id="login" ng-model="$ctrl.currentUser.login"
+                           ng-maxlength="200" required>
+                    <validator control="userForm.login" field-name="{{'home.users.label.login' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                <label class="col-sm-2 control-label" for="password" ng-bind="'home.users.label.password' | translate">
+                </label>
+
+                <div class="col-sm-10">
+                    <input type="password" name="password" class="form-control" id="password"
+                           ng-model="$ctrl.currentUser.password"
+                           ng-maxlength="200" required>
+                    <validator control="userForm.password" field-name="{{'home.users.label.password' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : userForm.mail.$invalid && !userForm.mail.$pristine }">
+                <label class="col-sm-2 control-label" for="mail"
+                       ng-bind="'home.users.label.mail' | translate"></label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="mail" id="mail" ng-model="$ctrl.currentUser.mail"
+                           required/>
+                    <validator control="userForm.mail" field-name="{{'home.users.label.mail' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+            <div class="form-group"
+                 ng-class="{ 'has-error' : userForm.photo.$invalid && !userForm.photo.$pristine }">
+
+                <label class="col-sm-2 control-label" for="photo"></label>
+
+                <div class="col-sm-10">
+                    <input type="file" class="form-control" name="photo" id="photo"
+                           ng-model="$ctrl.currentUser.photo" data-bind-file>
+                    <validator control="userForm.photo" field-name="{{'home.users.label.photo' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : userForm.team.$invalid && !userForm.team.$pristine }">
+
+                <label class="col-sm-2 control-label" for="team"
+                       ng-bind="'home.users.label.team' | translate"></label>
+
+                <div class="col-sm-10">
+                    <select class="form-control" name="team" id="team"
+                            ng-model="$ctrl.currentUser.teamByTeamId" ng-options="team.name for team in $ctrl.teams"
+                            required>
+                    </select>
+                    <validator control=" userForm.team"
+                               field-name="{{'home.users.label.team' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+
+            <div class="form-group"
+                 ng-class="{ 'has-error' : userForm.role.$invalid && !userForm.role.$pristine }">
+
+                <label class="col-sm-2 control-label" for="role"
+                       ng-bind="'home.users.label.role' | translate"></label>
+
+                <div class="col-sm-10">
+                    <select class="form-control" name="role" id="role"
+                            ng-model="$ctrl.currentUser.roleByRoleId" ng-options="role.type for role in $ctrl.roles"
+                            required>
+                    </select>
+                    <validator control=" userForm.role"
+                               field-name="{{'home.users.label.role' | translate}}"
+                               class="help-block"></validator>
+                </div>
+            </div>
+
+        </form>
+
+
+        <div class="row">
+            <div class="col-md-4 col-xs-4 col-lg-4">
+                <button class="btn btn-success" type="submit" ng-click="$ctrl.register()"
+                        ng-bind="'home.register' | translate"></button>
+            </div>
+            <div class="col-md-6 col-xs-6 col-lg-6">
+                <button class="btn btn-danger" type="submit" ng-click="$ctrl.login()"
+                        ng-bind="'home.login' | translate"></button>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr/>
+    </div>
+</div>
+
+
+
+
+

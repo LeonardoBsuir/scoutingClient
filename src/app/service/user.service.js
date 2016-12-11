@@ -1,5 +1,5 @@
 angular.module('scouthubApp').factory('UserService', ['$resource', function ($resource) {
-    var REST_SERVICE_URI = 'http://localhost:8080/scouting/users/:id';
+    var REST_SERVICE_URI = 'http://localhost:8080/scouting/users/:id/:playerId';
 
     var resource = $resource(REST_SERVICE_URI, {}, {
         getAll: {
@@ -14,6 +14,13 @@ angular.module('scouthubApp').factory('UserService', ['$resource', function ($re
 
         save: {
             method: 'POST'
+        },
+
+        addPlayerToUser: {
+            method: 'POST',
+            params: {
+                id: '@id'
+            }
         },
 
         get: {
@@ -35,6 +42,14 @@ angular.module('scouthubApp').factory('UserService', ['$resource', function ($re
             method: 'DELETE',
             params: {
                 id: '@id'
+            }
+        },
+
+        delPlayerToUser: {
+            method: 'DELETE',
+            params: {
+                id: '@id',
+                playerId: '@playerId'
             }
         }
     });
@@ -61,6 +76,14 @@ angular.module('scouthubApp').factory('UserService', ['$resource', function ($re
 
         update: function (user, id) {
             return resource.update({id: id}, user).$promise;
+        },
+
+        addPlayerToUser: function (id, user) {
+            return resource.addPlayerToUser({id: id}, user).$promise;
+        },
+
+        delPlayerToUser: function (id, playerId) {
+            return resource.delPlayerToUser({id: id}, {playerId: playerId}).$promise;
         },
 
         delete: function (id) {

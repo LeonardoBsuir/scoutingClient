@@ -1,11 +1,28 @@
 {
   "home": {
+    "sort": "Find and Sort",
+    "register": "Register",
+    "addtoteam": "Buy",
+    "addtolist": "Add to watchlist",
+    "delfromlist": "Remove from watchlist",
     "delete": "Delete",
+    "edit": "Edit",
     "email": "e-mail",
     "login": "login",
     "total": "Total",
     "room": "User account",
     "brand": "Scouting",
+    "users": {
+      "label": {
+        "name": "Name",
+        "login": "Login",
+        "password": "Password",
+        "photo": "Photo",
+        "mail": "Mail",
+        "team": "Team",
+        "role": "Role"
+      }
+    },
     "teams": {
       "button": {
         "view": "View teams",
@@ -162,18 +179,15 @@
       "long": "{{fieldName}} is too long"
     },
     "user": {
-      "duplicate": "Tag already exists",
       "load": "User not load"
     },
     "players": {
-      "duplicate": "Player already exists",
       "load": "Players not load"
     },
     "comments": {
       "available": "Comments not available"
     },
     "teams": {
-      "available": "News not available",
       "load": "Teams not load"
     },
     "server": "Server error. Try later"

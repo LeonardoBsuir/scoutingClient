@@ -183,11 +183,33 @@
 
 
             <div class="row">
-                <div class="col-lg-11 col-md-11 col-xs-11">
+                <div class="col-lg-3 col-md-3 col-xs-3">
+                    <button class=" btn btn-success" ng-click="$ctrl.buy($ctrl.player)"
+                            ng-if="$ctrl.isCoach() && $ctrl.isBuy()">
+                        <span ng-bind="'home.addtoteam' | translate"></span>
+                    </button>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <button class=" btn btn-primary" ng-click="$ctrl.addList($ctrl.player)"
+                            ng-if="$ctrl.isCoach() || $ctrl.isScout()">
+                        <span ng-bind="'home.addtolist' | translate"></span>
+                    </button>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <button class=" btn btn-danger" ng-click="$ctrl.delList($ctrl.player)"
+                            ng-if="$ctrl.isCoach() || $ctrl.isScout()">
+                        <span ng-bind="'home.delfromlist' | translate"></span>
+                    </button>
+                </div>
+                <div class="col-lg-2 col-md-2 col-xs-2">
+                    <button class=" btn btn-warning" ng-click="$ctrl.playerModalUpdate($ctrl.player)"
+                            ng-if="$ctrl.isAdmin()">
+                        <span ng-bind="'home.edit' | translate"></span>
+                    </button>
                 </div>
                 <div class="col-lg-1 col-md-1 col-xs-1">
                     <button class=" btn btn-danger" ng-click="$ctrl.deletePlayer($ctrl.player)"
-                            ng-if="$ctrl.ifDel()">
+                            ng-if="$ctrl.isAdmin()">
                         <span ng-bind="'home.delete' | translate"></span>
                     </button>
                 </div>

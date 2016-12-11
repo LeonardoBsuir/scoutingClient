@@ -1,13 +1,8 @@
-angular.module('scouthubApp').factory('PlayerService', ['$resource', function ($resource) {
-    var REST_SERVICE_URI = 'http://localhost:8080/scouting/players/:id';
+angular.module('scouthubApp').factory('RoleService', ['$resource', function($resource) {
+    var REST_SERVICE_URI = 'http://localhost:8080/scouting/roles/:id';
 
     var resource = $resource(REST_SERVICE_URI, {}, {
         getAll: {
-            method: 'GET',
-            isArray: true
-        },
-
-        getByTeamId: {
             method: 'GET',
             isArray: true
         },
@@ -22,7 +17,6 @@ angular.module('scouthubApp').factory('PlayerService', ['$resource', function ($
                 id: '@id'
             }
         },
-
 
         update: {
             method: 'PUT',
@@ -40,30 +34,23 @@ angular.module('scouthubApp').factory('PlayerService', ['$resource', function ($
     });
 
     return {
-        getAll: function () {
+        getAll: function() {
             return resource.getAll({}).$promise;
         },
 
-        getByTeamId: function (teamId) {
-            return resource.getByTeamId({
-                teamId: teamId
-            }).$promise;
-        },
-
-        get: function (id) {
+        get: function(id) {
             return resource.get({id: id}).$promise;
         },
 
-        create: function (player) {
-            return resource.save({}, player).$promise;
+        create: function(role) {
+            return resource.save({}, role).$promise;
         },
 
-
-        update: function (player, id) {
-            return resource.update({id: id}, player).$promise;
+        update: function(role, id) {
+            return resource.update({id: id}, role).$promise;
         },
 
-        delete: function (id) {
+        delete: function(id) {
             return resource.delete({id: id}).$promise;
         }
     };

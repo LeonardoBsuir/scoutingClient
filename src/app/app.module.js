@@ -47,6 +47,11 @@ angular.module('scouthubApp', ['ui.router', 'ngResource', 'ui.bootstrap', 'pasca
                     }
 
                 })
+                .state('register', {
+                    url: '/register',
+                    template: '<register></register>',
+
+                })
                 .state('scouting.player', {
                     url: '/player',
                     template: '<player></player>',
@@ -86,12 +91,15 @@ require('./assets/css/languages.css');
 require('./service/team.service.js');
 require('./service/user.service.js');
 require('./service/player.service.js');
+require('./service/role.service.js');
 require('./components/validation/validator.component.js');
 require('./components/validation/servererror.component.js');
 require('./components/home/home.component.js');
 require('./components/home/home.controller.js');
 require('./components/teamlist/teamlist.component.js');
 require('./components/teamlist/teamlist.controller.js');
+require('./components/register/register.component.js');
+require('./components/register/register.controller.js');
 require('./components/playerlist/playerlist.component.js');
 require('./components/playerlist/playerlist.controller.js');
 require('./components/player/player.component.js');

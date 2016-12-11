@@ -28,7 +28,7 @@ angular.module('scouthubApp').component('playerModal', {
             };
 
             $ctrl.finish = function () {
-                console.log($ctrl.currentPlayer);
+
                 $ctrl.currentPlayer.photo = 'app/assets/img/' + $ctrl.currentPlayer.photo.name;
                 if ($ctrl.currentPlayer.playerId !== null) {
                     PlayerService.update($ctrl.currentPlayer, $ctrl.currentPlayer.playerId).then(function (data) {

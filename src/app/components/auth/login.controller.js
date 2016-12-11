@@ -27,6 +27,12 @@ angular.module('scouthubApp').controller('LoginCtrl', ['$scope', '$state', '$uib
             });
         };
 
+        $scope.register = function () {
+            $scope.error = false;
+            $uibModalInstance.close();
+            $state.go('register');
+        };
+
         // if a session exists for current user (page was refreshed)
         // log him in again
         if ($window.sessionStorage["userInfo"]) {
